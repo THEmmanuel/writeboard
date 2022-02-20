@@ -1,6 +1,6 @@
 .swatch {
     width: 5vw;
-    max-width: 70px;
+    max-width: 60px;
     background-color: #DBDADA;
     margin-left: 10px;
     margin-top: 150px;
@@ -8,5 +8,12 @@
     border-radius: 4px;
     display: flex;
     flex-direction: column;
-    grid-gap: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+    margin: auto;
 }
