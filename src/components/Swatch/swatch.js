@@ -5,6 +5,12 @@ const Swatch = props => {
     return (
         <div className={style.swatch}>
             <span>swatch</span>
+            <span>swatch</span>
+            <span>swatch</span>
+            <span>swatch</span>
+            <span>swatch</span>
+            <span>swatch</span>
+
         </div>
     )
 }

@@ -3,7 +3,10 @@
     max-width: 70px;
     background-color: #DBDADA;
     margin-left: 10px;
-    margin-top: 50px;
+    margin-top: 150px;
     height: 65vh;
     border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
 }
