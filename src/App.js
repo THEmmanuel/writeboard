@@ -1,5 +1,5 @@
 import './App.css';
-import Swatch from './components/swatch'
+import Swatch from './components/Swatch/swatch'
 
 function App() {
   return (

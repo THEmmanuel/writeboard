@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import style from './swatch.module.css';
 
 const Swatch = props => {
     return (
-        <div>
+        <div className={style.swatch}>
             <span>swatch</span>
         </div>
     )
