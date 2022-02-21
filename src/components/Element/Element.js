@@ -1,7 +1,7 @@
 import rough from 'roughjs/bundled/rough.esm';
 const generator = rough.generator();
 
-const createElement = (id, x1, y1, x2, y2, type, width, strokeColor) => {
+export const createElement = (id, x1, y1, x2, y2, type, width, strokeColor) => {
     let roughElement = null;
 
     switch (type) {
