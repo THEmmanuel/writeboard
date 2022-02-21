@@ -145,6 +145,10 @@ function App() {
     })
   };
 
+  const handleMouseDown = e => {
+    
+  }
+
   return (
     <div className="App">
       <span>Writeboard</span>
