@@ -113,7 +113,36 @@ function App() {
   };
 
   const checkPresent = (clientX, clientY) => {
-
+    if (path === undefined) return;
+    let newPath = path;
+    path.forEach((stroke, index) => {
+      stroke.forEach((point, i) => {
+        if (
+          clientY < point.clientY + 10 &&
+          clientY > point.clientY - 10 &&
+          clientX < point.clientX + 10 &&
+          clientX > point.clientX - 10
+        ) {
+          newPath.splice(index, 1);
+          setPopped(true);
+          setPath(newPath);
+          return;
+        }
+      });
+    });
+    const newElements = elements;
+    newElements.forEach((element, index) => {
+      if (
+        clientX >= element.x1 &&
+        clientX <= element.x2 &&
+        clientY >= element.y1 &&
+        clientY <= element.y2
+      ) {
+        newElements.splice(index, 1);
+        setPopped(true);
+        setElements(newElements);
+      }
+    })
   };
 
   return (
