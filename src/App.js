@@ -112,12 +112,14 @@ function App() {
     setElements(elementsCopy);
   };
 
+  const checkPresent = (clientX, clientY) => {
+
+  };
+
   return (
     <div className="App">
       <span>Writeboard</span>
       <Swatch />
-
-
     </div>
   );
 }
