@@ -149,3 +149,9 @@ export const resizedCoordinates = (clientX, clientY, position, coordinates) => {
     }
 };
 
+export const midPointBetween = (point1, point2) => {
+    return {
+        x: point1.x + (point2.x - point1.x) / 2,
+        y: point1.y + (point2.y - point1.y) / 2,
+    };
+};
