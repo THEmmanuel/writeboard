@@ -210,6 +210,10 @@ function App() {
     }
   };
 
+const handleMouseMove = e => {
+
+}
+
   return (
     <div className="App">
       <span>Writeboard</span>
