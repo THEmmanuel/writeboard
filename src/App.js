@@ -294,13 +294,13 @@ function App() {
   const handleMouseUp = () => {
     if (action === 'resize') {
       const index = selectedElement.id;
-      const {id, type, strokeWidth, strokeColor} = elements[index];
-      const {x1, y1, x2, y2} = adjustElementCoordinates(elements[index]);
+      const { id, type, strokeWidth, strokeColor } = elements[index];
+      const { x1, y1, x2, y2 } = adjustElementCoordinates(elements[index]);
       updateElement(id, x1, y1, x2, y2, type, strokeWidth, strokeColor);
     } else if (action === 'drawing') {
       const index = selectedElement.id;
-      const {id, type, strokeWidth} = elements[index];
-      const {x1, y1, x2, y2} = adjustElementCoordinates(elements[index]);
+      const { id, type, strokeWidth } = elements[index];
+      const { x1, y1, x2, y2 } = adjustElementCoordinates(elements[index]);
     } else if (action === 'sketching') {
       const canvas = document.getElementById('canvas');
       const context = canvas.getContext('2d');
@@ -317,6 +317,22 @@ function App() {
     <div className="App">
       <span>Writeboard</span>
       <Swatch />
+      <canvas
+        id='canvas'
+        className='appCanvas'
+        width={window.innerHeight}
+        height={window.innerWidth}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onTouchStart={e => {
+          let touch = e.touches[0];
+          handleMouseDown({ clientX: touch.clientX, clientY: touch.clientY });
+        }}
+        onTouchEnd={handleMouseUp}
+      >
+        Canvas
+      </canvas>
     </div>
   );
 }
