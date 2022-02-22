@@ -156,7 +156,7 @@ function App() {
         const offsetX = clientX - element.x1;
         const offsetY = clientY - element.y1;
         setSelectedElement({ ...element, offsetX, offsetY });
-        if (element.positrion === 'inside') {
+        if (element.position === 'inside') {
           setAction('moving');
         } else {
           setAction('resize')
@@ -210,9 +210,41 @@ function App() {
     }
   };
 
-const handleMouseMove = e => {
+  const handleMouseMove = e => {
+    const canvas = document.getElementById('canvas');
+    const context = canvas.getContext('2d');
+    const { clientX, clientY } = e;
+    if (toolType === 'selection') {
+      const element = getElementAtPosition(clientX, clientY, elements);
+      e.target.style.cursor = element
+        ? cursorForPosition(element.position)
+        : 'default';
+    }
+    if (action === 'erasing') {
+      checkPresent(clientX, clientY);
+    }
 
-}
+    if (action === 'sketching') {
+      if (!isDrawing) return
+      const colour = points[points.length - 1].newColour;
+      const lineWidth = points[points.length - 1].newLineWidth;
+      const transparency = points[points.length - 1].transparency;
+      const newEle = { clientX, clientY, colour, lineWidth, transparency };
+
+      setPoints((state) => [...state, newEle]);
+      let midPoint = midPointBetween(clientX, clientY);
+      context.quadraticCurveTo(clientX, clientY, midPoint.x, midPoint.y);
+      context.lineTo(clientX, clientY);
+      context.stroke();
+    } else if (false) {
+
+    } else if (false) {
+
+    }
+    else if (true) {
+
+    }
+  }
 
   return (
     <div className="App">
