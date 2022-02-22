@@ -13,6 +13,9 @@ import eraser from '../../assets/eraser.png';
 
 const Swatch = props => {
     const [displaySroke, setDisplayStroke] = useState(false)
+    const handleClickStroke = () => {
+        setDisplayStroke(!dispatchEvent)
+    }
     return (
         <div className={style.swatch}>
             <img src={pencil} alt="pencil" className={style.icon} />
