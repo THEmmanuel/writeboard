@@ -280,8 +280,8 @@ function App() {
         strokeColor
       );
     } else if (action === 'resize') {
-      const {id, type, position, ...coordinates} = selectedElement;
-      const {x1, y1, x2, y2} = resizedCoordinates(
+      const { id, type, position, ...coordinates } = selectedElement;
+      const { x1, y1, x2, y2 } = resizedCoordinates(
         clientX,
         clientY,
         position,
@@ -291,7 +291,27 @@ function App() {
     }
   };
 
-  
+  const handleMouseUp = () => {
+    if (action === 'resize') {
+      const index = selectedElement.id;
+      const {id, type, strokeWidth, strokeColor} = elements[index];
+      const {x1, y1, x2, y2} = adjustElementCoordinates(elements[index]);
+      updateElement(id, x1, y1, x2, y2, type, strokeWidth, strokeColor);
+    } else if (action === 'drawing') {
+      const index = selectedElement.id;
+      const {id, type, strokeWidth} = elements[index];
+      const {x1, y1, x2, y2} = adjustElementCoordinates(elements[index]);
+    } else if (action === 'sketching') {
+      const canvas = document.getElementById('canvas');
+      const context = canvas.getContext('2d');
+      context.closePath();
+      const element = points;
+      setPoints([]);
+      setPath(prevState => [...prevState, element]);
+      setIsDrawing(false);
+    }
+    setAction('none');
+  }
 
   return (
     <div className="App">
