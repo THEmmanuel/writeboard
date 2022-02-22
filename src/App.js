@@ -220,6 +220,7 @@ function App() {
         ? cursorForPosition(element.position)
         : 'default';
     }
+
     if (action === 'erasing') {
       checkPresent(clientX, clientY);
     }
@@ -236,15 +237,61 @@ function App() {
       context.quadraticCurveTo(clientX, clientY, midPoint.x, midPoint.y);
       context.lineTo(clientX, clientY);
       context.stroke();
-    } else if (false) {
-
-    } else if (false) {
-
+    } else if (action === 'drawing') {
+      const index = elements.length - 1;
+      const { x1, y1 } = elements[index];
+      elements[index].strokeColor = colorWidth.hex;
+      elements[index].strokeWidth = shapeWidth;
+      updateElement(
+        index,
+        x1,
+        y1,
+        clientX,
+        clientY,
+        toolType,
+        shapeWidth,
+        colorWidth.hex
+      );
+    } else if (action === 'moving') {
+      const {
+        id,
+        x1,
+        x2,
+        y1,
+        y2,
+        type,
+        offsetX,
+        offsetY,
+        shapeWidth,
+        strokeColor,
+      } = selectedElement;
+      const offsetWidth = x2 - x1;
+      const offsetHeight = y2 - y1;
+      const newX = clientX - offsetX;
+      const newY = clientY - offsetY;
+      updateElement(
+        id,
+        newX,
+        newY,
+        newX + offsetWidth,
+        newY + offsetHeight,
+        type,
+        shapeWidth,
+        strokeColor
+      );
+    } else if (action === 'resize') {
+      const {id, type, position, ...coordinates} = selectedElement;
+      const {x1, y1, x2, y2} = resizedCoordinates(
+        clientX,
+        clientY,
+        position,
+        coordinates
+      );
+      updateElement(id, x1, y1, x2, y2, type, shapeWidth, colorWidth.hex)
     }
-    else if (true) {
+  };
 
-    }
-  }
+  
 
   return (
     <div className="App">
