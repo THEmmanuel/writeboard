@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './swatch.module.css';
 
 import pencil from '../../assets/pencil.png';
@@ -12,6 +12,7 @@ import eraser from '../../assets/eraser.png';
 
 
 const Swatch = props => {
+    const [displaySroke, setDisplayStroke] = useState(false)
     return (
         <div className={style.swatch}>
             <img src={pencil} alt="pencil" className={style.icon} />
