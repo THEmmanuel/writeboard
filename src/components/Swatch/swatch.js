@@ -11,11 +11,49 @@ import history from '../../assets/history.png';
 import eraser from '../../assets/eraser.png';
 
 
-const Swatch = props => {
-    const [displaySroke, setDisplayStroke] = useState(false)
+const Swatch = (
+    {
+        toolType,
+        setToolType,
+        width,
+        setWidth,
+        setElements,
+        setColorWidth,
+        setPath,
+        colorWidth,
+        setShapeWidth,
+    }) => {
+    const [displaySroke, setDisplayStroke] = useState(false);
+
     const handleClickStroke = () => {
         setDisplayStroke(!dispatchEvent)
-    }
+        setColorWidth(colorWidth);
+    };
+
+    const increaseWidth = () => {
+        if (toolType === 'paint' || toolType === 'eraser') {
+            if (width < 30) setWidth(prev => prev + 5);
+        }
+        if (toolType === 'pencil') {
+            if (width < 15) setWidth(prev => prev + 3);
+        }
+        if (toolType === ('polygon' || 'rectangle' || 'ellipse')) {
+            if (width < 15) setShapeWidth(prev => prev + 3);
+        }
+    };
+
+    const decreaseWidth = () => {
+        if (toolType === 'paint' || toolType === 'eraser') {
+            if (width > 1) setWidth(prev => prev - 5);
+        }
+        if (toolType === 'pencil') {
+            if (width > 1) setWidth(prev => prev - 3);
+        }
+        if (toolType === ('polygon' || 'rectangle' || 'circle')) {
+            if (width > 1) setShapeWidth(prev => prev - 3);
+        }
+    };
+
     return (
         <div className={style.swatch}>
             <img src={pencil} alt="pencil" className={style.icon} />
