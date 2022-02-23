@@ -2,18 +2,17 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import Swatch from './components/Swatch/swatch';
 import rough from 'roughjs/bundled/rough.esm';
-
 import {
   createElement,
   adjustElementCoordinates,
   cursorForPosition,
   resizedCoordinates,
   midPointBetween,
-  getElementAtPosition,
-} from './components/Element';
+  getElementAtPosition
+} from './components/Element/Element';
+
 
 function App() {
-
   const [points, setPoints] = useState([]);
   const [path, setPath] = useState([]);
   const [isDrawing, setIsDrawing] = useState(false);
