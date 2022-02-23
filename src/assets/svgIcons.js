@@ -76,7 +76,18 @@ export const ellipse = ({ toolType, colorWidth }) => {
 }
 
 export const polygon = ({ toolType, colorWidth }) => {
+    return (
+        <svg
+            width="30"
+            height="26"
+            viewBox="0 0 30 26"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
 
+            <path d="M15 2L27.9904 24.5H2.00962L15 2Z" stroke="black" stroke-width="2" />
+        </svg>
+    )
 }
 
 export const paint = ({ toolType, colorWidth }) => {
