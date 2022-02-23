@@ -6,6 +6,7 @@ const ColourPicker = ({ setColorWidth }) => {
     const [color, setColor] = useColor('hex', '#121212');
     useEffect(() => {
         setColorWidth(color);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [color]);
 
     return (
