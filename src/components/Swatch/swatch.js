@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import style from './swatch.module.css';
-
-import pencil from '../../assets/pencil.png';
-import line from '../../assets/line.png';
-import rectangle from '../../assets/rectangle.png';
-import ellipse from '../../assets/ellipse.png';
-import polygon from '../../assets/polygon.png';
-import paint from '../../assets/paint.png';
-import history from '../../assets/history.png';
-import eraser from '../../assets/eraser.png';
+import {
+    Line,
+    Move,
+    Polygon,
+    Rectangle,
+    Ellipse,
+    Paint,
+    Pencil,
+    History,
+    Eraser
+} from '../../assets/svgIcons';
+import ColourPicker from '../ColorPicker/ColourPicker';
 
 
 const Swatch = (
