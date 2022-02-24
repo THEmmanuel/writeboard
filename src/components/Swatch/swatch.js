@@ -59,14 +59,41 @@ const Swatch = (
 
     return (
         <div className={style.swatch}>
-            <img src={pencil} alt="pencil" className={style.icon} />
-            <img src={line} alt="line" className={style.icon} />
-            <img src={rectangle} alt="rectangle" className={style.icon} />
-            <img src={ellipse} alt="ellipse" className={style.icon} />
-            <img src={polygon} alt="polygon" className={style.icon} />
-            <img src={paint} alt="paint" className={style.icon} />
-            <img src={history} alt="history" className={style.icon} />
-            <img src={eraser} alt="eraser" className={style.icon} />
+            <button>
+                <Move />
+            </button>
+
+            <button>
+                <Line />
+            </button>
+
+            <button>
+                <Pencil />
+            </button>
+
+            <button>
+                <Paint />
+            </button>
+
+            <button>
+                <Rectangle />
+            </button>
+
+            <button>
+                <Ellipse />
+            </button>
+
+            <button>
+                <Polygon />
+            </button>
+
+            <button>
+                <Eraser />
+            </button>
+
+            <button>
+                <History />
+            </button>
         </div>
     )
 }
