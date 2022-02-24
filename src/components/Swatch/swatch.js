@@ -58,8 +58,8 @@ const Swatch = (
     };
 
     return (
-        <div className={style.swatch}>
-            <div>
+        <div className={style.swatchContainer}>
+            <div className={style.swatch}>
                 <button>
                     <Move />
                 </button>
