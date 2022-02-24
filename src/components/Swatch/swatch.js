@@ -59,41 +59,43 @@ const Swatch = (
 
     return (
         <div className={style.swatch}>
-            <button>
-                <Move />
-            </button>
+            <div>
+                <button>
+                    <Move />
+                </button>
 
-            <button>
-                <Line />
-            </button>
+                <button>
+                    <Line />
+                </button>
 
-            <button>
-                <Pencil />
-            </button>
+                <button>
+                    <Pencil />
+                </button>
 
-            <button>
-                <Paint />
-            </button>
+                <button>
+                    <Paint />
+                </button>
 
-            <button>
-                <Rectangle />
-            </button>
+                <button>
+                    <Rectangle />
+                </button>
 
-            <button>
-                <Ellipse />
-            </button>
+                <button>
+                    <Ellipse />
+                </button>
 
-            <button>
-                <Polygon />
-            </button>
+                <button>
+                    <Polygon />
+                </button>
 
-            <button>
-                <Eraser />
-            </button>
+                <button>
+                    <Eraser />
+                </button>
 
-            <button>
-                <History />
-            </button>
+                <button>
+                    <History />
+                </button>
+            </div>
         </div>
     )
 }
