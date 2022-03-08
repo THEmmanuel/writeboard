@@ -60,35 +60,86 @@ const Swatch = (
     return (
         <div className={style.swatchContainer}>
             <div className={style.swatch}>
-                <button>
+                <button
+                    className={style.Move}
+                    onClick={() => {
+                        setToolType('move');
+                        setShapeWidth(1);
+                    }}>
                     <Move />
                 </button>
 
-                <button>
+                <button
+                    className={style.Line}
+                    onClick={() => {
+                        setToolType('line');
+                        setWidth(1);
+                        setShapeWidth(1);
+                    }}>
                     <Line />
                 </button>
 
-                <button>
+                <button
+                    className={style.Pencil}
+                    onClick={() => {
+                        setToolType('pencil');
+                        setWidth(1);
+                        setShapeWidth(1);
+                    }}>
                     <Pencil />
                 </button>
 
-                <button>
+                <button
+                    className={style.Paint}
+                    onClick={() => {
+                        setToolType('paint');
+                        setWidth(10);
+                        setShapeWidth(1);
+                    }}
+                >
                     <Paint />
                 </button>
 
-                <button>
+                <button
+                    className={style.Rectangle}
+                    onClick={() => {
+                        setToolType('rectangle');
+                        setWidth(1);
+                        setShapeWidth(1);
+                    }}
+                >
                     <Rectangle />
                 </button>
 
-                <button>
+                <button
+                    className={style.Ellipse}
+                    onClick={() => {
+                        setToolType('ellipse');
+                        setWidth(1);
+                        setShapeWidth(1);
+                    }}
+                >
                     <Ellipse />
                 </button>
 
-                <button>
+                <button 
+                className={style.Polygon}
+                onClick = {() => {
+                    setToolType('polygon')
+                    setWidth(1);
+                    setShapeWidth(1);
+                }}
+                >
                     <Polygon />
                 </button>
 
-                <button>
+                <button
+                    onClick={() => {
+                        setToolType('eraser');
+                        setWidth(10);
+                        setShapeWidth(1);
+                    }}
+                >
                     <Eraser />
                 </button>
 
