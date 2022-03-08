@@ -61,7 +61,7 @@ export const Rectangle = ({ toolType, colorWidth }) => {
     )
 }
 
-export const ellipse = ({ toolType, colorWidth }) => {
+export const Ellipse = ({ toolType, colorWidth }) => {
     return (
         <svg
             width="27"
@@ -75,7 +75,7 @@ export const ellipse = ({ toolType, colorWidth }) => {
     )
 }
 
-export const polygon = ({ toolType, colorWidth }) => {
+export const Polygon = ({ toolType, colorWidth }) => {
     return (
         <svg
             width="30"
@@ -90,7 +90,7 @@ export const polygon = ({ toolType, colorWidth }) => {
     )
 }
 
-export const paint = ({ toolType, colorWidth }) => {
+export const Paint = ({ toolType, colorWidth }) => {
     return (
         <svg
             width="30"
@@ -106,7 +106,7 @@ export const paint = ({ toolType, colorWidth }) => {
     )
 }
 
-export const history = ({ toolType, colorWidth }) => {
+export const History = ({ toolType, colorWidth }) => {
     return (
         <svg
             width="24"
@@ -126,7 +126,7 @@ export const history = ({ toolType, colorWidth }) => {
 
 }
 
-export const eraser = ({ toolType, colorWidth }) => {
+export const Eraser = ({ toolType, colorWidth }) => {
     return (
         <svg
             width="30"
@@ -140,4 +140,3 @@ export const eraser = ({ toolType, colorWidth }) => {
 
     )
 }
-
